@@ -7,12 +7,10 @@ description: >
 ---
 
 ### Comment s'amorce le combat ?
-Lorsque deux agents [Navarch](/docs/agents/navarch/) sont dans le même système, le combat peut commencer de l'une des trois manières suivantes :
-1. Un joueur clique sur le Navarch ennemi tout en le sélectionnant et choisit de se battre.
-2. Un Navarch réglé sur [Stance agressive ou furieuse](/docs/agents/navarch/#stance) attaquera immédiatement les flottes ennemies dans leur système. Si plus d'une flotte dans un système est définie sur agressive ** une seule se battra ** et les autres ne feront que regarder
-</br>**REMARQUE** : Il existe actuellement un bogue empêchant que cela se produise si la flotte entre dans le système, il ne se déclenchera que lorsqu'une autre flotte entrera dans le système.
-3. Un Navarch défini sur [Position du défenseur](/docs/agents/navarch/#defender) commencera un combat si le système dans lequel il se trouve est attaqué (Pillage/Bombard/Colonisation). La position du défenseur permettra également au navarch de rejoindre un autre navarch de la même faction au combat contre l'ennemi.
-
+Lorsque deux agents [Navarch](/docs/agents/navarch/) sont dans le même système, le combat peut commencer de l'une des trois manières suivantes :
+1. Un joueur clique sur le Navarch ennemi tout en sélectionnant le sien et choisit de se battre. ça se met en file : un navarque en mouvement ou occupé peut recevoir l'ordre d'attaquer un navarque dans un autre système, le déplacement est mis en file d'abord et l'attaque se résout à l'arrivée. si la cible est partie entre-temps l'ordre est ignoré (vous recevez une notification) et la file continue
+2. Un Navarch réglé sur [Interdiction ou Furie](/docs/agents/navarch/#stance) intercepte les flottes ennemies qui arrivent dans son système. Furie attaque aussi à sa propre arrivée, quoi que fasse l'ennemi. seules les flottes au repos interceptent, une flotte en pleine action n'interrompt jamais. les alliés de faction de la flotte qui intercepte rejoignent la même bataille
+3. Un Navarch défini sur [Position du défenseur](/docs/agents/navarch/#defender) commencera un combat si le système dans lequel il se trouve est attaqué (Pillage/Bombardement/Conquête/Colonisation), ou s'il arrive sur un ennemi en train de faire l'une de ces actions. La position du défenseur permettra également au navarch de rejoindre un autre navarch de la même faction au combat contre l'ennemi.
 ### Comment le combat est-il résolu ?
 Le combat se déroule en rounds au cours de chaque round les phases suivantes ont lieu :
 

@@ -52,22 +52,28 @@ Repairs will only happen while a fleet is not moving or engaging in an offensive
 
 
 ## Stance
+your stance decides when the fleet starts fights on its own. faction-mates are never targeted. the in-game Help panel (Navarch stances) has the full matrix
+
 ### Defender
-Will join into fights, and engage enemies to prevent pillaging/bombarding/colonization. But will not otherwise start a fight with enemies in the same system
+engages enemy navarchs doing something hostile in its system (pillage, bombard, conquest, colonization, dominion takeover). also engages them on arrival: a Defender fleet jumping into a system where an enemy is mid-pillage attacks it. idle enemies are left alone, so two Defender fleets from different factions can share a system. joins any fight a faction-mate gets into here
 
 ### Deserter
-Attempts to flee combat as soon as possible
+never starts a fight. when caught arriving on a hostile picket it rolls to escape (50%) instead of fighting
 
 ### Prudent
-Will only fight if directly attacked
+will only fight if directly attacked. never joins in for a faction-mate
 
-### Aggressive
-Will automatically engage any enemy in the same system
+### Interdiction
+(was "Aggressive") intercepts any enemy navarch arriving at its system, whatever they intend. does not start fights when it is itself the arriving fleet, but an enemy Interdiction fleet already sitting there will intercept it. two Interdiction fleets only leave each other alone once they already share a system
 
 ### Fury
-Will automatically engage any enemy in the same system
-In a future implementation, will also engage non-allied fleets.
+engages any enemy navarch in the same system: when one arrives, when one starts a hostile action, and when the Fury fleet itself arrives. busy or idle, whatever their stance
 
+### Can a busy fleet be attacked?
+yes. a fleet mid pillage/bombard/conquest/colonization never breaks off to intercept, but an arriving Fury or Defender fleet engages it anyway, and it gets pulled into any fight its faction-mates have in that system. fleets in transit can't be engaged
+
+### Which fleet gets engaged first?
+most hostile stance first: Fury, then Interdiction, Defender, Prudent, Deserter. ties are random. faction-mates of the first target join that same battle, so a Fury screen parked in front of a conquesting fleet takes the hit and the conquest fleet joins it. one battle, not two
 
 ## What happens if you recall a Navarch with a fleet?
 recalling them will destroy the fleet

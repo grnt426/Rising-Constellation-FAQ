@@ -34,22 +34,28 @@ Les réparations ne sont effectuées que lorsqu'une flotte ne se déplace pas ou
 
 
 ## Stance
+la posture décide quand la flotte engage le combat d'elle-même. les alliés de faction ne sont jamais visés. le panneau d'aide en jeu (Postures de Navarque) donne la matrice complète
+
 ### Défenseur
-Se joindra à des combats et engagera des ennemis pour empêcher le pillage/le bombardement/la colonisation. Mais il n'engagera pas de combat avec les ennemis du même système.
+engage les navarques ennemis qui font quelque chose d'hostile dans son système (pillage, bombardement, conquête, colonisation, prise de dominion). les engage aussi à l'arrivée : une flotte Défenseur qui saute dans un système où un ennemi est en plein pillage l'attaque. les ennemis au repos sont laissés tranquilles, deux flottes Défenseur de factions différentes peuvent donc partager un système. rejoint tout combat d'un allié de faction ici
 
 ### Déserteur
-Tente de fuir le combat dès que possible.
+n'engage jamais le combat. surpris à l'arrivée par un piquet hostile, il tente de s'échapper (50%) au lieu de combattre
 
 ### Prudent
-Ne se battra que s'il est directement attaqué
+ne se bat que s'il est directement attaqué. n'intervient jamais pour un allié de faction
 
-### Agressif
-Engagera automatiquement tout ennemi dans le même système
+### Interdiction
+(anciennement « Agressif ») intercepte tout navarque ennemi qui arrive dans son système, quelle que soit son intention. n'engage pas le combat quand c'est lui la flotte qui arrive, mais une flotte Interdiction ennemie déjà postée là l'interceptera. deux flottes Interdiction ne se laissent tranquilles qu'une fois qu'elles partagent déjà un système
 
 ### Furie
-Engagera automatiquement tout ennemi dans le même système
-Dans une implémentation future, engagera également les flottes non alliées.
+engage tout navarque ennemi dans le même système : quand un ennemi arrive, quand il lance une action hostile, et quand la flotte Furie arrive elle-même. occupé ou au repos, quelle que soit sa posture
 
+### Une flotte occupée peut-elle être attaquée ?
+oui. une flotte en plein pillage/bombardement/conquête/colonisation n'interrompt jamais son action pour intercepter, mais une flotte Furie ou Défenseur qui arrive l'engage quand même, et elle est entraînée dans tout combat que ses alliés de faction livrent dans ce système. les flottes en transit ne peuvent pas être engagées
+
+### Quelle flotte est engagée en premier ?
+la posture la plus hostile d'abord : Furie, puis Interdiction, Défenseur, Prudent, Déserteur. égalité = aléatoire. les alliés de faction de la première cible rejoignent cette même bataille, donc un écran Furie posté devant une flotte en conquête encaisse le coup et la flotte de conquête le rejoint. une seule bataille, pas deux
 
 ### Que se passe-t-il si vous rappelez un Navarque avec une flotte ?
 Le rappeler détruira la flotte.

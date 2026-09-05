@@ -8,11 +8,9 @@ description: >
 
 ### How is combat initiated?
 When two [Navarch](/docs/agents/navarch/) agents are in the same system combat can begin in one of three ways:
-1. A player clicks on the the enemy Navarch while selecting their, and chooses to fight.
-2. A Navarch set to [Aggressive or Fury stance](/docs/agents/navarch/#stance) will immediately attack enemy fleets in their system. If more than one fleet in a system is set to aggressive **only one will fight** and the others will just spectate 
-</br>**NOTE**: There is currently a bug preventing this from happening if the fleet is entering the system, it will only trigger when another fleet enters the system.
-3. A Navarch set to [Defender stance](/docs/agents/navarch/#defender) will begin a fight if the system they are in is under attack (Pillage/Bombard/Colonization). Defender stance will also allow the navarch to join another navarch of the same faction in combat against the enemy.
-
+1. A player clicks on the enemy Navarch while selecting their own, and chooses to fight. this can be queued: a moving or busy navarch can be ordered to attack a navarch in another system, the move is queued first and the attack resolves on arrival. if the target left in the meantime the order is skipped (you get a notification) and the queue moves on
+2. A Navarch set to [Interdiction or Fury stance](/docs/agents/navarch/#stance) intercepts enemy fleets arriving in its system. Fury also attacks on its own arrival, whatever the enemy is doing. only idle fleets intercept, a fleet mid-action never breaks off. faction-mates of the intercepting fleet join the same battle
+3. A Navarch set to [Defender stance](/docs/agents/navarch/#defender) will begin a fight if the system they are in is under attack (Pillage/Bombard/Conquest/Colonization), or if it arrives on an enemy doing one of those. Defender stance will also allow the navarch to join another navarch of the same faction in combat against the enemy.
 ### How does Combat get resolved?
 Combat occurs in rounds during each round the following phases take place:
 
